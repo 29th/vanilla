@@ -46,7 +46,7 @@ class Gdn_AuthenticationProviderModel extends Gdn_Model {
       // Calculate the final urls of the provider.
       TouchValue('SignInUrlFinal', $Row, $Row['SignInUrl']);
       TouchValue('SignOutUrlFinal', $Row, $Row['SignOutUrl']);
-      TouchValue('RegisterUrlFinal', $Row, $Row['RegisterUrlFinal']);
+      TouchValue('RegisterUrlFinal', $Row, $Row['RegisterUrl']);
    }
    
    /**
