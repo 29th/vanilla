@@ -866,7 +866,7 @@ class SettingsController extends DashboardController {
          $ThemeManager = new Gdn_ThemeManager();
          $this->SetData('ThemeInfo', $ThemeManager->EnabledThemeInfo());
 
-         if ($this->Form->IsPostBack()) {
+         if ($this->Form->AuthenticatedPostBack()) {
             // Save the styles to the config.
             $StyleKey = $this->Form->GetFormValue('StyleKey');
 
