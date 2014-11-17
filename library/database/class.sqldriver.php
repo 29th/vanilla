@@ -1816,7 +1816,7 @@ abstract class Gdn_SQLDriver {
             foreach($v as $FunctionName => $Val) {
                if ($EscapeString === FALSE) {
                   if (is_string($FunctionName) !== FALSE) {
-                     $this->_Sets[$this->EscapeIdentifier($f)] = $FunctionName.'('.$Val.')';
+                     throw new Exception('MySql functions are no longer supported.', 400);
                   } else {
                      $this->_Sets[$this->EscapeIdentifier($f)] = $Val;
                   }
