@@ -430,6 +430,7 @@ EOT;
       }
 
       $FormData = $this->Form->FormValues(); // debug
+      Trace($FormData, 'SSO');
 
       // Make sure the minimum required data has been provided to the connect.
       if (!$this->Form->GetFormValue('Provider'))
