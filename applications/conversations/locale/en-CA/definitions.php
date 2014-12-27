@@ -16,3 +16,7 @@ $Definition['Start a New Conversation'] = 'New Message';
 $Definition['New Conversation'] = 'New Message';
 $Definition['Start Conversation'] = 'Post Message';
 
+// 29th
+$Definition['Categories'] = 'Boards';
+$Definition['Category'] = 'Board';
+$Definition['Child Categories'] = 'Child Boards';
