@@ -264,7 +264,7 @@ function Gdn_Quotes() {
       // First try and throw an event.
       var r = jQuery(Editor).trigger('appendHtml', QuoteText + "<br />");
 
-      QuoteText = QuoteText+"\n";
+      QuoteText = QuoteText+"\n\n";
       Editor.val(Editor.val() + QuoteText);
 
       switch (this.InsertMode) {
