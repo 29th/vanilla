@@ -353,8 +353,12 @@ BQ;
                // Strip inner quotes and mentions...
                $QuoteBody = self::_StripMarkdownQuotes($QuoteBody);
                $QuoteBody = self::_StripMentions($QuoteBody);
+               $Username = $Data->InsertName;
+               if(strpos($Data->InsertName, ' ') !== FALSE) {
+                $Username = '"' . $Data->InsertName . '"';
+               }
 
-               $Quote = '> ' . sprintf(T('%s said:'), '@' . $Data->InsertName) . "\n" .
+               $Quote = '> ' . sprintf(T('%s said:'), '@' . $Username) . "\n" .
                '> ' . str_replace("\n", "\n> ", $QuoteBody);
 
                break;
