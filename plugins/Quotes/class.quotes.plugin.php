@@ -167,9 +167,17 @@ class QuotesPlugin extends Gdn_Plugin {
    /**
     * Add 'Quote' option to Discussion.
     */
-   public function Base_AfterFlag_Handler($Sender, $Args) {
+   /*public function Base_AfterFlag_Handler($Sender, $Args) {
       echo Gdn_Theme::BulletItem('Flags');
       $this->AddQuoteButton($Sender, $Args);
+   }*/
+
+   public function DiscussionController_CommentOptions_Handler($Sender, $Args) {
+      if(isset($Args['CommentOptions'])) {
+        $Args['CommentOptions']['QuoteComment'] = $this->AddQuoteButton($Sender, $Args);
+      }
+      //die(print_r($Args['CommentOptions'],true));
+      //$this->AddQuoteButton($Sender, $Args);
    }
 
    /**
@@ -189,7 +197,13 @@ class QuotesPlugin extends Gdn_Plugin {
 
       $Reply = T('Reply'); // help capture translation.
 
-      echo Anchor(Sprite('ReactQuote', 'ReactSprite').' '.T('Quote'), Url("post/quote/{$Object->DiscussionID}/{$ObjectID}", TRUE), 'ReactButton Quote Visible').' ';
+      return array(
+        'Label' => T('Quote'),
+        'Url' => Url("post/quote/{$Object->DiscussionID}/{$ObjectID}", TRUE),
+        'Class' => 'ReactButton Quote'
+      );
+
+      //echo Anchor(Sprite('ReactQuote', 'ReactSprite').' '.T('Quote'), Url("post/quote/{$Object->DiscussionID}/{$ObjectID}", TRUE), 'ReactButton Quote Visible').' ';
    }
 
    public function DiscussionController_BeforeCommentDisplay_Handler($Sender) {
@@ -268,7 +282,7 @@ BLOCKQUOTE;
          );
          $this->FormatQuote($Type, $ID, $QuoteData);
          if ($QuoteData['status'] == 'success')
-            $Sender->Form->SetValue('Body', "{$QuoteData['body']}\n");
+            $Sender->Form->SetValue('Body', "{$QuoteData['body']}\n\n");
       }
    }
 
