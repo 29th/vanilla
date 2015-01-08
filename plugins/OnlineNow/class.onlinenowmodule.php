@@ -79,25 +79,25 @@ class OnlineNowModule extends Gdn_Module {
             if (!($Session->IsValid())) return;
             ob_start();
             ?>
-                <div id="OnlineNow" class="Box">
+                <div id="OnlineNow">
                     <h4><?php echo T("Online Now"); ?> (<?php echo $this->_OnlineUsers->NumRows(); ?>)</h4>
-                    <ul class="PanelInfo">
+                    <div class="list-group">
             <?php
          if ($this->_OnlineUsers->NumRows() > 0) { 
                 foreach($this->_OnlineUsers->Result() as $User) {
 
                     if (($Session->CheckPermission('Plugins.OnlineNow.ViewHidden')) || ($User->Invisible < 1)) {
-                       echo "<li>";                    
-                       echo UserPhoto($User, array('ImageClass' => 'onimage'));
                        $Href = Url(UserUrl($User));
-                       echo '<span class="Time">'.'<a class="'.'Popup Name'.'" title="'.'Post to Activity'.'" href="'.$Href.'"'.'>'.htmlspecialchars($User->Name).'</a>'.'<a class="'.'Popup Time'.'" href="'.'messages/add/'.htmlspecialchars($User->Name).'" title="'.'Send PM'.'"'.'>'.Gdn_Format::Date($User->Timestamp).'</a>'.'</span>';
+                       echo "<a href=\"".$Href."\" class=\"list-group-item\">";
+                       echo htmlspecialchars($User->Name) . ' (' . Gdn_Format::Date($User->Timestamp) . ')';
+                       //echo '<span class="Time">'.'<a class="'.'Popup Name'.'" title="'.'Post to Activity'.'" href="'.$Href.'"'.'>'.htmlspecialchars($User->Name).'</a>'.'<a class="'.'Popup Time'.'" href="'.'messages/add/'.htmlspecialchars($User->Name).'" title="'.'Send PM'.'"'.'>'.Gdn_Format::Date($User->Timestamp).'</a>'.'</span>';
                         
-                       echo "</li>";        
+                       echo "</a>";
                        }
 
                      }
                     }
-            echo "</ul>";
+            echo "</div>";
             echo "</div>";
             $String = ob_get_contents();
             @ob_end_clean();
