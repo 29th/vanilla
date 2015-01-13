@@ -1150,7 +1150,7 @@
           name: 'cmdCode',
           hotkey: 'Ctrl+K',
           title: 'Code',
-          icon: { glyph: 'glyphicon glyphicon-asterisk', fa: 'fa fa-code', 'fa-3': 'icon-code' },
+          icon: { glyph: 'glyphicon glyphicon-asterisk', fa: 'fa fa-file-code-o', 'fa-3': 'icon-file-code-o' },
           callback: function(e) {
 
             // Give/remove ** surround the selection
@@ -1244,6 +1244,17 @@
             } else {
               e.hidePreview()
             }
+          }
+        },{
+          name: 'cmdDisable',
+          toggle: true,
+          hotkey: 'Ctrl+D',
+          title: 'Disable Markdown',
+          btnClass: 'btn btn-sm btn-disable',
+          icon: { glyph: 'glyphicon glyphicon-remove', fa: 'fa fa-remove', 'fa-3': 'remove' },
+          callback: function(e){
+            $('[name="Format"]').val($('.btn-disable').hasClass('active') ? 'Markdown' : 'Html'); // active class is toggled after this
+            $('.md-editor button:not(".btn-disable")').toggleClass('disabled');
           }
         }]
       }]
