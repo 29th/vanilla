@@ -4,3 +4,6 @@
 [submodule "plugins/MarkdownBBCode"]
 	path = plugins/MarkdownBBCode
 	url = https://github.com/29th/vanilla-markdown-bbcode.git
+[submodule "plugins/PersonnelFiles"]
+	path = plugins/PersonnelFiles
+	url = https://github.com/29th/vanilla-personnelfiles.git
