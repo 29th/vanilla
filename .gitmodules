@@ -7,3 +7,6 @@
 [submodule "plugins/PersonnelFiles"]
 	path = plugins/PersonnelFiles
 	url = https://github.com/29th/vanilla-personnelfiles.git
+[submodule "plugins/bootstrapmarkdown"]
+	path = plugins/bootstrapmarkdown
+	url = https://github.com/kasperisager/vanilla-bootstrapmarkdown.git
