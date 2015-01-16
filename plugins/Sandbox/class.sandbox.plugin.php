@@ -14,27 +14,27 @@ $PluginInfo['Sandbox'] = array(
 
 class Sandbox extends Gdn_Plugin {
 
-  public function DiscussionController_AuthorInfo_Handler($Sender) {
-/*    $Author = $Sender->EventArguments['Author'];
-    $RankID = $Author->RankID;
-    
-    // Don't iterate unless rank ID is set
-    if(is_null($RankID)) {
-      return;
+    public function DiscussionController_AuthorInfo_Handler($Sender) {
+        /*    $Author = $Sender->EventArguments['Author'];
+        $RankID = $Author->RankID;
+        
+        // Don't iterate unless rank ID is set
+        if(is_null($RankID)) {
+            return;
+        }
+        $RankModel = Yaga::RankModel();
+        $Ranks = $RankModel->Get();
+        $AuthorRank = new stdClass();
+        $AuthorRank->Name = NULL;
+        foreach($Ranks as $Rank) {
+            if($Rank->RankID == $RankID) {
+                $AuthorRank = $Rank;
+                break;
+            }
+        }
+        */  
+        //    echo WrapIf($AuthorRank->Name, 'span', array('class' => 'MItem Rank Rank-' . Gdn_Format::Url($AuthorRank->Name)));
+        echo 'rank here'; 
     }
-    $RankModel = Yaga::RankModel();
-    $Ranks = $RankModel->Get();
-    $AuthorRank = new stdClass();
-    $AuthorRank->Name = NULL;
-    foreach($Ranks as $Rank) {
-      if($Rank->RankID == $RankID) {
-        $AuthorRank = $Rank;
-        break;
-      }
-    }
-  */  
-//    echo WrapIf($AuthorRank->Name, 'span', array('class' => 'MItem Rank Rank-' . Gdn_Format::Url($AuthorRank->Name)));
-	echo 'rank here'; 
- }
 
 }
