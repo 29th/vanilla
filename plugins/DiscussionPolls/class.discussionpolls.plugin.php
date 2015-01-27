@@ -549,7 +549,7 @@ class DiscussionPolls extends Gdn_Plugin {
 
       echo WrapIf($Tools, 'ul', array('id' => 'DP_Tools'));
     }
-    else {
+    /*else {
       // Poll does not exist
       if($Discussion->InsertUserID == $Session->UserID || $Session->CheckPermission('Plugins.DiscussionPolls.Manage')) {
         echo Wrap(
@@ -557,7 +557,7 @@ class DiscussionPolls extends Gdn_Plugin {
                         Anchor(T('Attach Poll'), '/vanilla/post/editdiscussion/' . $Discussion->DiscussionID), 'li'), 'ul', array('id' => 'DP_Tools')
         );
       }
-    }
+    }*/
   }
 
   /**
