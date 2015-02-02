@@ -1,15 +1,13 @@
 [submodule "themes/bootstrap"]
 	path = themes/bootstrap
 	url = https://github.com/29th/vanilla-bootstrap.git
-[submodule "plugins/MarkdownBBCode"]
-	path = plugins/MarkdownBBCode
-	url = https://github.com/29th/vanilla-markdown-bbcode.git
 [submodule "plugins/PersonnelFiles"]
 	path = plugins/PersonnelFiles
 	url = https://github.com/29th/vanilla-personnelfiles.git
 [submodule "plugins/bootstrapmarkdown"]
 	path = plugins/bootstrapmarkdown
 	url = https://github.com/29th/vanilla-bootstrapmarkdown.git
+
 [submodule "plugins/MarkdownMarkup"]
 	path = plugins/MarkdownMarkup
 	url = https://github.com/29th/vanilla-markdownmarkup.git
