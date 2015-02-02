@@ -9,9 +9,13 @@
 );
 
 class MarkdownMarkupPlugin extends Gdn_Plugin {
-public function DiscussionController_BeforeCommentBody_Handler($Sender) {
-	    $Comment = $Sender->EventArguments['Object']->Body;
-	    $Comment = preg_replace('/(\r?\n)/', '  $1', $Comment);
-	    $Sender->EventArguments['Object']->Body = $Comment;
-	}
+  public function DiscussionController_BeforeCommentBody_Handler($Sender) {
+    $Sender->EventArguments['Object']->Body = preg_replace('/(\r?\n)/', '  $1', $Sender->EventArguments['Object']->Body);
+  }
+  public function PostController_BeforeCommentPreviewFormat_Handler($Sender) {
+    $Sender->Comment->Body = preg_replace('/(\r?\n)/', '  $1', $Sender->Comment->Body);
+  }
+  public function Base_BeforeConversationMessageBody_Handler($Sender) {
+    $Sender->EventArguments['Message']->Body = preg_replace('/(\r?\n)/', '  $1', $Sender->EventArguments['Message']->Body);
+  }
 }
