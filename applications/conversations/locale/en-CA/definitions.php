@@ -20,3 +20,6 @@ $Definition['Start Conversation'] = 'Post Message';
 $Definition['Categories'] = 'Boards';
 $Definition['Category'] = 'Board';
 $Definition['Child Categories'] = 'Child Boards';
+$Definition['Announce'] = 'Sticky';
+$Definition['Don\'t announce.'] = 'Don\'t sticky.';
+$Definition['Where do you want to announce this discussion?'] = 'Where do you want to sticky this discussion?';
