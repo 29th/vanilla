@@ -8,12 +8,18 @@ You should have received a copy of the GNU General Public License along with Gar
 Contact Vanilla Forums Inc. at support [at] vanillaforums [dot] com
 */
 
+$Definition['RecipientUserID'] = 'recipient';
 
-/**
- */
-function smarty_function_mydiscussions_link($Params, &$Smarty) {
-   $Wrap = GetValue('wrap', $Params, 'li');
-   return Gdn_Theme::Link('discussions/mine',
-      GetValue('text', $Params, T('My Discussions')),
-      GetValue('format', $Params, Wrap('<a href="%url" class="%class">%text</a>', $Wrap)));
-}
+
+// Deprecated Translations
+$Definition['Start a New Conversation'] = 'New Message';
+$Definition['New Conversation'] = 'New Message';
+$Definition['Start Conversation'] = 'Post Message';
+
+// 29th
+$Definition['Categories'] = 'Boards';
+$Definition['Category'] = 'Board';
+$Definition['Child Categories'] = 'Child Boards';
+$Definition['Announce'] = 'Sticky';
+$Definition['Don\'t announce.'] = 'Don\'t sticky.';
+$Definition['Where do you want to announce this discussion?'] = 'Where do you want to sticky this discussion?';
