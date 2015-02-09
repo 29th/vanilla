@@ -2,7 +2,7 @@
 
 # Get updates
 git reset --hard HEAD
-git pull
+git pull origin 29th-extensions-2.1.8p2
 git status -sb
 
 # Update submodules
