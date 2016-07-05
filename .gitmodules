@@ -11,3 +11,6 @@
 [submodule "plugins/MarkdownMarkup"]
 	path = plugins/MarkdownMarkup
 	url = https://github.com/29th/vanilla-markdownmarkup.git
+[submodule "applications/api"]
+	path = applications/api
+	url = https://github.com/29th/vanilla-api.git
